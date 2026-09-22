@@ -12,7 +12,7 @@ int main() {
     scanf("%d", &rInput);
 
     if((pInput == 0 || pInput == 1) && (qInput == 1 || qInput == 0) && (rInput == 1 || rInput == 0)){
-        resInput = qInput && !rInput && !pInput;
+        resInput = (pInput && qInput) || (!pInput && !qInput) || rInput;
         printf("Result: %d\n",resInput);
        
         printf("_________________________________________________________________\n"); 
@@ -23,7 +23,7 @@ int main() {
             for (int q = 0; q <= 1; q++) { 
                 for (int r = 0; r <= 1; r++) { 
                    
-                    int res = q && !p && !r;  
+                    int res = (p && q) || (!p && !q) || r;  
                    
                     printf("|\t %d\t |\t %d\t |\t %d\t |\t %d\t|\n", p, q, r, res); 
                 } 
