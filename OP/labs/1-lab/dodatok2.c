@@ -6,10 +6,10 @@ int main(void){
     printf("Enter a six-digit number:\n");
     scanf("%d", &num);
     if(num >= 100000 && num <= 999999){
-        int rest, res, i, cache, isValid;
+        int rest, res, i, cache, state;
         i = 0;
         res = 0;
-        isValid = 0;
+        state = 0;
         start:
             rest = num % 10;
             if(rest < 5){
@@ -21,9 +21,9 @@ int main(void){
                     goto start;
                 }   
             }else{
-                isValid = 1;
+                state = 1;
             }
-        if(isValid){
+        if(state){
             printf("Invalid number: not 5 base\n");
         }else{
             printf("Your num is: %d\n", res);   
