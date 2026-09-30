@@ -4,8 +4,6 @@
 int main(void){
     double a, b, res, step;
     double eps = 0.0001;
-
-    printf("ODZ: [-1;+inf)\n");
     
     printf("Enter A: ");
     scanf("%lf", &a);
@@ -24,10 +22,13 @@ int main(void){
     printf("Enter step: ");
     scanf("%lf", &step);
 
+
+    printf("\n+------------+------------+------------+\n");
+    printf("|     x      |  default   |   taylor   |\n");
+    printf("+------------+------------+------------+\n");
+
     while(a <= b){
         res = pow((1 + a), 0.25);
-        printf("---------------------------\n");
-        printf("%lf\n", res);
 
 
         double term = 1.0;
@@ -40,11 +41,12 @@ int main(void){
 
             n++;
         }
-        printf("%lf\n", sum);
-        printf("---------------------------\n");
+       printf("| %10.4lf | %10.6lf | %10.6lf |\n", a, res, sum);
 
         a += step;
     }
+
+    printf("+------------+------------+------------+\n");
 
     return 0;
 }

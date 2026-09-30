@@ -4,6 +4,8 @@
 int main(void){
     int r, count;
 
+    count = 0;
+
     printf("Enter R: ");
     scanf("%d", &r);
 
