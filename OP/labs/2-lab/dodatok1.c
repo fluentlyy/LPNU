@@ -22,3 +22,13 @@ int main(void){
     
     return 0;
 }
+
+
+scanf("%d %d", x, y);
+if(x > 0){
+    printf("%lf", fabs(x + y))
+}else if(x > y){
+    printf("%d", x)
+}else if(y > x){
+    printf("%d", y)
+}
