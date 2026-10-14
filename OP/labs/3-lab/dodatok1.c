@@ -1,45 +1,38 @@
 #include <stdio.h>
+#define SIZE 10
 
 int main(void){
-    int n;
-    double max, min, average, sum = 0;
+    double vect[SIZE];
+    int maxIndx = 0;
+    int minIndx = 0;
+    int startIndx, endIndx;
+    double sum, average, count;
 
-    printf("Enter amount of vector`s elements(at least 4): ");
-    if(scanf("%d", &n) < 4){
-        printf("Error\n");
-        return 0;
-    }
-    
+    for(int i = 0; i < SIZE; i++){
+        printf("Enter a value: ");
+        scanf("%lf", vect + i);
 
-    double arr[n];
-
-    for(int i = 0; i < n; i++){
-        printf("Enter a num: ");
-        scanf("%lf", &arr[i]);
-
-        if(i == 0){
-            max = arr[0];
-            min = arr[0];
-        }else{
-            if(max < arr[i] ) max = arr[i];
-
-            if(min > arr[i]) min = arr[i];
+        if(*(vect + maxIndx) < *(vect + i)){
+            maxIndx = i;
+        }
+        if(*(vect + minIndx) > *(vect + i)){
+            minIndx = i;
         }
     }
-
-    
-    for(int i = 0; i < n; i++){
-        if(arr[i] == max || arr[i] == min){
-            arr[i] = 0;
-        }
-
-        sum += arr[i];
-
+    if(maxIndx > minIndx){
+        startIndx = minIndx + 1;
+        endIndx = maxIndx;
+    }else{
+        startIndx = maxIndx + 1;
+        endIndx = minIndx;
     }
     
-    average = sum / (n - 2.0);
-    printf("Result: %lf", average);
-
+    for(startIndx;startIndx < endIndx; startIndx++){
+        sum += vect[startIndx];
+        count++;
+    }
+    average = sum / count;
+    printf("%lf", average);
 
     return 0;
 }

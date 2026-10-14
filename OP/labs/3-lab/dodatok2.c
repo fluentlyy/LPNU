@@ -1,29 +1,41 @@
 #include <stdio.h>
-#include <math.h>
+#define SIZE 4
 
 int main(){
-    double matrix[5][5] = {
-        {12, -5, 8, -3, 1},
-        {-25, 14, 0, -18, 6},
-        {4, -10, 2, -1, 15},
-        {-9, 7, -20, 11, -4},
-        {3, -16, 13, 22, -2}
-    };
-    double max = fabs(matrix[0][0]);
-
-    for(int i = 0; i < 5; i++){
-        for(int j = 0; j < 5; j++){
-            if(max < fabs(matrix[i][j])){
-                max = fabs(matrix[i][j]);
+    double matrix[SIZE][SIZE];
+    double tempArr[SIZE];
+    for(int i = 0; i < SIZE; i++){
+        for(int j = 0; j < SIZE; j++){
+            printf("Enter a value: ");
+            scanf("%lf", *(matrix + i) + j);
+            if(i == SIZE - 1){
+                *(tempArr + j) = *(*(matrix + i) + j);
             }
         }
     }
-    for(int i = 0; i < 5; i++){
-        for(int j = 0; j < 5; j++){
-             matrix[i][j] /= max;
-             printf("%lf\n", matrix[i][j]);
+
+
+    for(int i = SIZE - 1; i >= 0; i--){
+        for(int j = 0; j < SIZE; j++){
+            if(i == 0){
+               *(*(matrix + i) + j) = *(tempArr + j);
+            }else{
+                *(*(matrix + i) + j) = *(*(matrix + (i - 1)) + j);
+            }
+            
         }
     }
+
+     for(int i = 0; i < SIZE; i++){
+        for(int j = 0; j < SIZE; j++){  
+                if(j == SIZE - 1){
+                    printf("%f\n", *(*(matrix + i) + j));
+                }else{
+                    printf("%f ", *(*(matrix + i) + j));
+                }
+        }
+    }
+
 
     return 0;
 }
