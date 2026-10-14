@@ -4,17 +4,28 @@
 int main(){
     double matrix[SIZE][SIZE];
     double tempArr[SIZE];
+
     for(int i = 0; i < SIZE; i++){
         for(int j = 0; j < SIZE; j++){
             printf("Enter a value: ");
             scanf("%lf", *(matrix + i) + j);
+
             if(i == SIZE - 1){
-                *(tempArr + j) = *(*(matrix + i) + j);
+                *(tempArr + j) = (*(matrix + i))[j];
             }
         }
     }
-
-
+    printf("-----------------------------------------\n");
+    for(int i = 0; i < SIZE; i++){
+        for(int j = 0; j < SIZE; j++){  
+                if(j == SIZE - 1){
+                    printf("%f\n", *(*(matrix + i) + j));
+                }else{
+                    printf("%f ", *(*(matrix + i) + j));
+                }
+        }
+    }
+    printf("-----------------------------------------\n");
     for(int i = SIZE - 1; i >= 0; i--){
         for(int j = 0; j < SIZE; j++){
             if(i == 0){
@@ -25,7 +36,7 @@ int main(){
             
         }
     }
-
+    printf("-----------------------------------------\n");
      for(int i = 0; i < SIZE; i++){
         for(int j = 0; j < SIZE; j++){  
                 if(j == SIZE - 1){
@@ -35,7 +46,6 @@ int main(){
                 }
         }
     }
-
-
+    printf("-----------------------------------------\n");
     return 0;
 }
