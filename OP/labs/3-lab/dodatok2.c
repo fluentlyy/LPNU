@@ -9,7 +9,6 @@ int main(){
         for(int j = 0; j < SIZE; j++){
             printf("Enter a value: ");
             scanf("%lf", *(matrix + i) + j);
-
             if(i == SIZE - 1){
                 *(tempArr + j) = (*(matrix + i))[j];
             }
@@ -49,3 +48,5 @@ int main(){
     printf("-----------------------------------------\n");
     return 0;
 }
+
+
