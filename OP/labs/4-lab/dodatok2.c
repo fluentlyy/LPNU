@@ -21,7 +21,6 @@ int main(){
     int minIndxStr = 0;
 
     for(int j = 0; j < i; j++){
-        printf("%s\n", wordList[j]);
         if(strlen(wordList[maxIndxStr]) < strlen(wordList[j])){
             maxIndxStr = j;
         }
