@@ -1,12 +1,13 @@
 #include <stdio.h>
+#define SIZE 5
 
 int main(){
-    int matrix[4][4];
+    int matrix[SIZE][SIZE];
     int isReflective = 0;
     int isSymmetrical = 0;
     int isTrans = 1;
-    for(int i = 0; i < 4; i++){
-        for(int j = 0;j < 4;j++){
+    for(int i = 0; i < SIZE; i++){
+        for(int j = 0;j < SIZE;j++){
             while(1){
             printf("M[%d][%d] = ", i + 1, j + 1);
             int scanRes = scanf("%d", *(matrix + i) + j);
@@ -21,8 +22,8 @@ int main(){
             }
         }
     }
-    for(int i = 0; i < 4; i++){
-        for(int j = 0;j < 4;j++){
+    for(int i = 0; i < SIZE; i++){
+        for(int j = 0;j < SIZE;j++){
             printf("%d ", matrix[i][j]);
             if(matrix[i][j] == matrix[j][i]){
                 if(i == j){
@@ -33,7 +34,7 @@ int main(){
                 }
                 isSymmetrical++;
             }
-            for(int k = 0; k < 4;k++){
+            for(int k = 0; k < SIZE;k++){
                 if(matrix[i][j] == 1 && matrix[j][k] == 1 && matrix[i][k] == 0){
                     isTrans = 0;
                 }
@@ -41,14 +42,14 @@ int main(){
         }
         printf("\n");
     }
-    if(isReflective == 4){
+    if(isReflective == SIZE){
         printf("Matrix is reflective\n");
         isReflective = 1;
     }else{
         printf("Matrix isn`t reflective\n");
         isReflective = 0;
     }
-    if(isSymmetrical == 12){
+    if(isSymmetrical == (SIZE * SIZE) - SIZE){
         printf("Matrix is symmetrical\n");
         isSymmetrical = 1;
     }else{
