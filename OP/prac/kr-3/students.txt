@@ -1,0 +1,7 @@
+6
+101 Bondarenko Anna 92 88 95 90
+102 Melnyk Ivan 75 81 68 79
+103 Kovalenko Olena 98 94 91 96
+104 Shevchenko Petro 60 55 64 58
+105 Tkachenko Maria 85 89 87 90
+106 Kravets Andrii 42 71 65 53
