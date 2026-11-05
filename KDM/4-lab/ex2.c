@@ -13,7 +13,6 @@ int main() {
     int count = 10, nextCount, primeCount = 0;
     int i, j, k, diff, pos, found, changed;
 
-    // Перетворюємо числа у двійкові набори
     for (i = 0; i < count; i++) {
         for (j = 0; j < 4; j++) {
             current[i][j] =
@@ -35,7 +34,6 @@ int main() {
             used[i] = 0;
         }
 
-        // Порівнюємо кожну пару наборів
         for (i = 0; i < count; i++) {
             for (j = i + 1; j < count; j++) {
                 diff = 0;
@@ -65,7 +63,7 @@ int main() {
                     used[j] = 1;
                     changed = 1;
 
-                    // Не додаємо однакові набори двічі
+
                     found = 0;
 
                     for (k = 0; k < nextCount; k++) {
@@ -82,7 +80,6 @@ int main() {
             }
         }
 
-        // Невикористані набори є простими імплікантами
         for (i = 0; i < count; i++) {
             if (used[i] == 0) {
                 found = 0;
@@ -100,7 +97,6 @@ int main() {
             }
         }
 
-        // Наступний етап склеювання
         count = nextCount;
 
         for (i = 0; i < count; i++) {
