@@ -29,6 +29,6 @@ void sentenceDoubleAlph(const char *first, ...){
 }
 
 int main(){
-    sentenceDoubleAlph("Hello", "stoped", "name", "oil", "aple", NULL);
+    sentenceDoubleAlph("Hello", "Illia", "name", "oil", "apple", NULL);
     return 0;
 }
