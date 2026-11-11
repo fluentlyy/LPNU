@@ -11,7 +11,7 @@ int main() {
     printf("Enter a 12-bit sequence: ");
     scanf("%19s", received);
 
-    // Input validation
+
     if (strlen(received) != 12) {
         printf("Error: enter exactly 12 bits.\n");
         return 0;
@@ -28,7 +28,7 @@ int main() {
 
     printf("\nReceived code: %s\n", received);
 
-    // Calculate the error syndrome
+
     for (p = 1; p <= 8; p *= 2) {
         parity = 0;
 
@@ -45,7 +45,6 @@ int main() {
 
     printf("Error syndrome: %d\n", syndrome);
 
-    // Correct the error
     if (syndrome == 0) {
         printf("No error detected.\n");
     } else if (syndrome <= 12) {
@@ -67,7 +66,7 @@ int main() {
 
     printf("\n");
 
-    // Extract the information bits
+
     data[1] = code[3];
     data[2] = code[5];
     data[3] = code[6];
@@ -89,7 +88,7 @@ int main() {
 
     printf("\nSequence weight: %d\n", weight);
 
-    // Check the expected weight
+
     if (weight == 5) {
         printf("Valid weight: equals 5.\n");
     } else {
@@ -98,7 +97,7 @@ int main() {
         return 0;
     }
 
-    // Re-encode the information bits
+
     for (i = 1; i <= 12; i++) {
         encoded[i] = 0;
     }
