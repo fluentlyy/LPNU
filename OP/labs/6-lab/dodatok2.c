@@ -12,10 +12,10 @@ void sentenceDoubleAlph(const char *first, ...){
     const char *current = first;
 
     while(current != NULL){
-        char *firstAlphaP = current;
+        char *wordP = current;
         while(*current != '\0'){
             if(*current == *(current + 1)){
-                printf("Word with double letter: %s\n", firstAlphaP);
+                printf("Word with double letter: %s\n", wordP);
                 count++;
                 break;
             }
@@ -29,6 +29,6 @@ void sentenceDoubleAlph(const char *first, ...){
 }
 
 int main(){
-    sentenceDoubleAlph("Hello", "Illia", "name", "oil", "apple", NULL);
+    sentenceDoubleAlph("pineaple", "Ilia", "name", "oil", "aple", NULL);
     return 0;
 }

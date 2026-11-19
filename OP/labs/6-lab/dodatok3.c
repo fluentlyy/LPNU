@@ -2,7 +2,9 @@
 #define OPTION 2
 
 int main(){
-    int x = 0, y = 1, z = 1, w;
+    int x, y, z, w;
+    printf("Enter x, y and z(x y z):");
+    scanf("%d %d %d", &x, &y, &z);
     #if OPTION == 1
         w = ((x && y) && (x || z)) && (!x != y);
     #else
